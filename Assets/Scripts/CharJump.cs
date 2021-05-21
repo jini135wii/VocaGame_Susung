@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharJump : MonoBehaviour
 {
     public static int life = 3;
-    public float jump = 8.0f;
+    public float jump = 5.0f;
     Rigidbody2D rgd2D;
     // Start is called before the first frame update
     void Start()
@@ -17,16 +17,18 @@ public class CharJump : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) rgd2D.velocity = new Vector2(0, jump);
+        if (rgd2D.angularVelocity > 100 || rgd2D.angularVelocity < -100) rgd2D.angularVelocity = 50;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0,0,0), 1.5f * Time.deltaTime);
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (LifeCheck.cor != (coll.name == "choiceA" ? 0 :(coll.name == "choiceB" ? 1 : 2) ) ) life--;
-    }
-    void OnTriggerExit2D(Collider2D coll)
-    {
         Debug.Log(life);
         Debug.Log(coll.name);
         LifeCheck.nextRound();
         LifeCheck.RoundChange = true;
+    }
+    void OnTriggerExit2D(Collider2D coll)
+    {
     }
 }

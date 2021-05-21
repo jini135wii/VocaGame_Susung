@@ -19,5 +19,6 @@ public class trashThrow : MonoBehaviour
             transform.position = new Vector2(4, Random.Range(0.0f, 5.0f));
             rgd.velocity = new Vector2(Random.Range(-3.0f, -10.0f), 0);
         }
+        if (transform.rotation.z < 20 && transform.rotation.z > -20) rgd.angularVelocity = 0;
     }
 }
