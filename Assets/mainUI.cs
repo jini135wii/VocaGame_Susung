@@ -9,7 +9,9 @@ public enum BottonType
     Option,
     Sound,
     Back,
-    Quit
+    Quit,
+    Restart,
+    MainMenu
 }
 public class mainUI : MonoBehaviour
 {
