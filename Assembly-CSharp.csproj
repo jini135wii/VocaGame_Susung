@@ -60,10 +60,10 @@
     <Compile Include="Assets\Scripts\BlockMoves.cs" />
     <Compile Include="Assets\title\bottontype.cs" />
     <Compile Include="Assets\Scripts\ScreenRatio.cs" />
+    <Compile Include="Assets\Scripts\test.cs" />
     <Compile Include="Assets\Scripts\trashThrow.cs" />
     <Compile Include="Assets\Scripts\CharJump.cs" />
     <Compile Include="Assets\title\manager.cs" />
-    <Compile Include="Assets\Scripts\test.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
