@@ -50,6 +50,12 @@ public class bottontype : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
                 Application.Quit();
                 Debug.Log("종료");
                 break;
+            case BottonType.Restart:
+                manager.LoadSceneHandle("SampleScene", 0);
+                break;
+            case BottonType.MainMenu:
+                manager2.LoadSceneHandle2("title", 0);
+                break;
         }
     }
     public void CanvasGroupOff(CanvasGroup cg)

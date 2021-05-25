@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\trashThrow.cs" />
     <Compile Include="Assets\Scripts\CharJump.cs" />
     <Compile Include="Assets\title\manager.cs" />
+    <Compile Include="Assets\manager2.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
