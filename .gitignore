@@ -73,3 +73,5 @@ Library/ArtifactDB
 Library/ArtifactDB-lock
 Library/SourceAssetDB
 Library/SourceAssetDB-lock
+Library/ArtifactDB
+Library/SourceAssetDB
