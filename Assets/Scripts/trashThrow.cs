@@ -14,11 +14,20 @@ public class trashThrow : MonoBehaviour
     }
     void Update()
     {
-        if(transform.position.y <= -1.9f)
+        if(transform.position.y <= -1.7f)
         {
             transform.position = new Vector2(4, Random.Range(0.0f, 5.0f));
-            rgd.velocity = new Vector2(Random.Range(-3.0f, -10.0f), 0);
+            rgd.velocity = new Vector2(Random.Range(-5.0f, -10.0f), 0);
         }
-        if (transform.rotation.z < 20 && transform.rotation.z > -20) rgd.angularVelocity = 0;
+        rgd.angularVelocity /= 2;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 0), 3f * Time.deltaTime);
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag != "Choice")
+        {
+            transform.position = new Vector2(4, Random.Range(0.0f, 5.0f));
+            rgd.velocity = new Vector2(Random.Range(-5.0f, -10.0f), 0);
+        }
     }
 }

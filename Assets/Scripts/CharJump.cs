@@ -17,8 +17,8 @@ public class CharJump : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) rgd2D.velocity = new Vector2(0, jump);
-        if (rgd2D.angularVelocity > 100 || rgd2D.angularVelocity < -100) rgd2D.angularVelocity = 50;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0,0,0), 1.5f * Time.deltaTime);
+        rgd2D.angularVelocity /= 2;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, 0), 3f * Time.deltaTime);
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
@@ -27,8 +27,5 @@ public class CharJump : MonoBehaviour
         Debug.Log(coll.name);
         LifeCheck.nextRound();
         LifeCheck.RoundChange = true;
-    }
-    void OnTriggerExit2D(Collider2D coll)
-    {
     }
 }
